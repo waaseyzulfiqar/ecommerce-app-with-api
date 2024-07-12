@@ -27,9 +27,11 @@ function Dashboard() {
         {products.map((product: any) => {
           return (
             
-              <div onClick={() => handleClick(product)} className="border w-64 h-[340px] text-center bg-slate-200 py-3 px-5 rounded-md cursor-pointer">
-                <img className="w-32 mb-6 mx-auto rounded-md" src={product.image} alt="" />
-                <h3 className="text-base">{product.title}</h3>
+              <div onClick={() => handleClick(product)} className="border w-72 h-96 overflow-hidden ease-out duration-300 shadow-md hover:scale-110 p-3 rounded-md cursor-pointer">
+                <img className="w-36 mb-6 mx-auto rounded-md" src={product.image} alt="" />
+                <p className="py-2 text-slate-600">{product.category}</p>
+                <h3 className="text-lg font-medium">{product.title}</h3>
+                <p className="text-slate-500 py-1">{`$${product.price}`}</p>
               </div>
           );
         })}
